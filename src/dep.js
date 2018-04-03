@@ -1,4 +1,4 @@
-export class Dep {
+class Dep {
   constructor() {
     this.subs = []
   }
@@ -9,3 +9,7 @@ export class Dep {
     this.subs.forEach(item => item.update())
   }
 }
+
+Dep.target = null
+
+export default Dep

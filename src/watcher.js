@@ -1,6 +1,6 @@
-import {Dep} from './dep'
+import Dep from './dep'
 
-export class Watcher {
+class Watcher {
   constructor(vm, key, cb) {
     this.vm = vm;
     this.key = key;
@@ -17,9 +17,10 @@ export class Watcher {
   get() {
     Dep.target = this
     // 访问data值，触发obvserve的get,添加Dep观察者
-    // console.log(this.vm,this.key)
     let value = this.vm[this.key]
     delete Dep.target
     return value
   }
 }
+
+export default Watcher

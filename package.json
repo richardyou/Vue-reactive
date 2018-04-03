@@ -1,7 +1,7 @@
 {
-  "name": "vue-jqdq6z-reactive",
+  "name": "vue-reactive",
   "description": "",
-  "homepage": "https://stackblitz.com/edit/vue-jqdq6z-reactive",
+  "homepage": "https://stackblitz.com/edit/vue-reactive",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

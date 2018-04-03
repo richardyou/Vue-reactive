@@ -20,7 +20,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     
-  <title>vue-jqdq6z-reactive</title>
+  <title>vue-reactive</title>
   </head>
   <body>
     <noscript>
@@ -30,6 +30,10 @@
   {{name}}
   <br />
   <input v-model="name">
+  <br />
+
+  <div>{{count}}</div>
+  <button v-on:click="add">add count</button>  
 </div>
     <!--
       This HTML file is a template.

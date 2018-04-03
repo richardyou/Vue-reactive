@@ -1,5 +1,5 @@
-import { Dep } from './dep'
-// 观察者
+import Dep from './dep'
+
 class Observer {
   constructor(data) {
     this.data = data;
@@ -9,28 +9,29 @@ class Observer {
     Object.keys(data).forEach(item => this.defineReactive(data, item, data[item]))
   }
   defineReactive(data, key, val) {
-    let dep = new Dep;
+    let dep = new Dep()
     Object.defineProperty(data, key, {
-      get: function () {
-        // 如果存在节点 添加观察者
+      get: () => {
+        // 如果存在节点 添加订阅者
         if (Dep.target) {
           dep.addSub(Dep.target)
         }
         return val;
       },
-      set: function (newVal) {
-        // 如果值不一致，更新
+      set: (newVal) => {
+        // 如果值不一致，触发dep的update
         if (Object.is(val, newVal)) return;
         val = newVal;
         dep.notify()
       }
     })
-    observe(val)
   }
 }
 
-export function observe(data) {
+function observe(data) {
   if (data && typeof data === 'object') {
     new Observer(data)
   }
 }
+
+export default observe
