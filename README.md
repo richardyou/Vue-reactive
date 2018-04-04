@@ -8,8 +8,8 @@
 
 * Dep 负责 Obserber Watcher 通信 触发 Watcher 的 update
 
-* Watcher 接受 Dep 变更通知 执行 Compiler 更新回调
+* Watcher 订阅者 接受 Dep 变更通知 执行 Compiler 更新回调
 
-* Compiler 负责 view 解析 添加 watcher 负责 view 反向更新 model 层
+* Compiler 负责 view 解析 添加 watcher , view 反向更新 model 层
 
 ![vue_reactive](Vue_reactive.png)
